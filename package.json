@@ -15,6 +15,7 @@
   "license": "ISC",
   "homepage": "https://fullstackvietnam.com",
   "dependencies": {
+    "babel-core": "^6.26.3",
     "body-parser": "^1.18.2",
     "browser-sync": "^2.26.3",
     "cookie-parser": "^1.4.3",
@@ -46,6 +47,7 @@
     "morgan": "^1.9.1",
     "nodemon": "^1.18.7",
     "pug": "^2.0.0-rc.4",
+    "run-sequence": "^2.2.1",
     "serve-favicon": "^2.4.5",
     "supertest": "^3.0.0"
   }

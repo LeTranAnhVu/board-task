@@ -10,8 +10,44 @@ const {
 } = browserSync;
 const config = require('./config/config');
 
+
+const clean = require('gulp-clean');
+const babel = require('gulp-babel');
+var runSequence = require('run-sequence');
+
+gulp.task('clean', () => {
+  return gulp.src([
+      './public/css',
+      './public/js',
+      './public/img',
+    ], {
+      read: false
+    })
+    .pipe(clean());
+});
+
+gulp.task('copy-js', () => {
+  return gulp.src([
+      './app/scripts/*.js'
+    ])
+    .pipe(sourcemaps.init())
+    .pipe(concat('main.js'))
+    .pipe(babel())
+    .pipe(sourcemaps.write(''))
+    .pipe(gulp.dest('./public/js'))
+})
+
+
+gulp.task('copy-img', () => {
+  return gulp.src([
+      './app/img/**.*'
+    ])
+    .pipe(gulp.dest('./public/img'));
+})
+
+
 gulp.task('sass', () => {
-  gulp.src(['./public/sass/*.sass',
+  return gulp.src(['./public/sass/*.sass',
       '!./public/sass/{**/\_*,**/\_*/**}'
     ])
     .pipe(sourcemaps.init())
@@ -27,31 +63,36 @@ gulp.task('sass', () => {
 });
 
 gulp.task('concat-css', () => {
-  gulp.src([
-    'bower_components/fortawesome-font-awesome/css/all.css',
-  ])
-  .pipe(concat('thuvien.css'))
-  .pipe(gulp.dest('./public/css'));
+  return gulp.src([
+      'bower_components/fortawesome-font-awesome/css/all.css',
+    ])
+    .pipe(concat('thuvien.css'))
+    .pipe(gulp.dest('./public/css'));
 })
 
 
 gulp.task('concat-js', () => {
-  gulp.src([
-    'bower_components/jquery/dist/jquery.slim.min.js',
-    'bower_components/popper.js/dist/umd/popper.min.js',
-    'bower_components/bootstrap/dist/js/bootstrap.min.js',
-  ])
-  .pipe(concat('thuvien.js'))
-  .pipe(gulp.dest('./public/js'));
+  return gulp.src([
+      'bower_components/jquery/dist/jquery.slim.min.js',
+      'bower_components/popper.js/dist/umd/popper.min.js',
+      'bower_components/bootstrap/dist/js/bootstrap.min.js',
+    ])
+    .pipe(concat('thuvien.js'))
+    .pipe(gulp.dest('./public/js'));
 })
 
 
 gulp.task('watch', () => {
   gulp.watch('./public/sass/*.sass', ['sass']);
+  gulp.watch('./app/img/**/*.*', ['copy-img']);
+  gulp.watch('./app/img', ['copy-img']);
+  gulp.watch('./app/scripts/**/*.js', ['copy-js']);
+  gulp.watch('./app/views/**/**.pug', ['nodemon']).on('change', browserSync.reload);
+  gulp.watch("./public/**/*.*").on('change', browserSync.reload);
 });
 
 gulp.task('browser-sync', ['nodemon'], () => {
-  browserSync.init(null, {
+  return browserSync.init(null, {
     proxy: `http://localhost:${config.server.port}`,
     files: ['public/**/*.*', '**.js'],
     // browser: 'google chrome',
@@ -77,11 +118,17 @@ gulp.task('nodemon', cb => nodemon({
     }, 1000);
   }));
 
-gulp.task('default', [
-  'concat-js',
-  'concat-css',
-  'sass',
-  'nodemon',
-  'watch',
-  'browser-sync',
-]);
+gulp.task('default', function (callback) {
+  runSequence(
+    'clean',
+    'copy-js',
+    'copy-img',
+    'concat-js',
+    'concat-css',
+    'sass',
+    'nodemon',
+    'watch',
+    'browser-sync',
+    callback
+  )
+});

@@ -1,0 +1,1 @@
+{"version":3,"sources":["main.js"],"names":["$","document","ready","console","log"],"mappings":"AAAAA,EAAAC,QAAA,EAAAC,KAAA,CAAA,MAAA;AACAC,YAAAC,GAAA,CAAA,eAAA;AACA,CAFA","file":"main.js","sourcesContent":["$(document).ready(() => {\n    console.log('ready ahihi !');\n});\n"]}
