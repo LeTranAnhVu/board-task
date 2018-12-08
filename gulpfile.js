@@ -4,7 +4,7 @@ const nodemon = require('gulp-nodemon');
 const browserSync = require('browser-sync');
 const sourcemaps = require('gulp-sourcemaps');
 const util = require('gulp-util');
-
+const concat = require('gulp-concat');
 const {
   reload
 } = browserSync;
@@ -25,6 +25,26 @@ gulp.task('sass', () => {
     }));
 
 });
+
+gulp.task('concat-css', () => {
+  gulp.src([
+    'bower_components/fortawesome-font-awesome/css/all.css',
+  ])
+  .pipe(concat('thuvien.css'))
+  .pipe(gulp.dest('./public/css'));
+})
+
+
+gulp.task('concat-js', () => {
+  gulp.src([
+    'bower_components/jquery/dist/jquery.slim.min.js',
+    'bower_components/popper.js/dist/umd/popper.min.js',
+    'bower_components/bootstrap/dist/js/bootstrap.min.js',
+  ])
+  .pipe(concat('thuvien.js'))
+  .pipe(gulp.dest('./public/js'));
+})
+
 
 gulp.task('watch', () => {
   gulp.watch('./public/sass/*.sass', ['sass']);
@@ -58,6 +78,8 @@ gulp.task('nodemon', cb => nodemon({
   }));
 
 gulp.task('default', [
+  'concat-js',
+  'concat-css',
   'sass',
   'nodemon',
   'watch',
