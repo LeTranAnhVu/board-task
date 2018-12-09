@@ -1,9 +1,18 @@
 extends layout
 
 block content
-  #app.text-center
-    img(src="/img/logo.png" alt="express logo")
-    h2 FullStack Vietnam 2345 dskfjaksd #{title} App bobo
-    p helo
-      i.fa.fa-angle-down
-    include ./components/ahihi
+	h1= title
+	section.section-task.containter-fluid
+		.row
+			.col-lg-4.tasks-col
+				#tasks-mission
+					include ./components/taskbox
+
+			.col-lg-4.tasks-col
+				#tasks-processing
+					include ./components/taskbox
+
+			.col-lg-4.tasks-col
+				#tasks-done
+					include ./components/taskbox
+			

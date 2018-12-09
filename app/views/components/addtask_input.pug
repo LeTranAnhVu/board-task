@@ -1,0 +1,75 @@
+
+.addtask-input-box.card
+	.box-title
+		h4.card-title.mb-0 Thêm nhiệm vụ
+	.box-content
+		form
+			.row
+				.addtask-input-item.col-12
+					.card
+						.input-group.input-custom-style-01
+							label.mb-0(for="addtask-mission-input") Tên nhiệm vụ
+							input.form-control#addtask-mission-input(type="text" name="missionName")
+
+				.addtask-input-item.col-lg-6
+					.card
+						.input-group
+							.input-group-prepend
+								label.mb-0.input-group-text(for="addtask-priority-input") Priority
+							select#addtask-priority-input.custom-select
+								option(value="3") Low
+								option(value="2" selected) Normal
+								option(value="1") Medium
+								option(value="0") High
+						
+				.addtask-input-item.col-lg-6
+					.card
+						.input-group
+							.custom-file
+								input#addtask-document-input.custom-file-input(type="file" enctype="multipart/form-data")
+								label.mb-0.custom-file-label.mb-0(for="addtask-document-input") Choose file
+
+				.addtask-input-item.col-lg-6
+					.card
+						.input-group
+							.input-group-prepend
+								span#basic-addon1.input-group-text Người tạo
+							input.form-control(type="text" name="username" value="admin")
+				.addtask-input-item.col-lg-6
+					.card
+						.input-group
+							.input-group-prepend
+								label.mb-0.input-group-text(for="addtask-responsiveBy-input.custom") Người thực hiện
+							select#addtask-responsiveBy-input.custom-select
+								option(value="" selected) Choose...
+								option(value="3") Admin
+								option(value="2") Nguyen Van A
+								option(value="1") Nguyen Thi B
+								option(value="0") Tran Duc C
+				.addtask-input-item.col-lg-6
+					.card
+						.input-group.input-custom-style-01
+							label.mb-0(for="addtask-dateStart-input") Ngày hiệu lực
+							input.form-control#addtask-dateStart-input(type="date" name="dateStart")
+				.addtask-input-item.col-lg-6
+					.card
+						.input-group.input-custom-style-01
+							label.mb-0(for="addtask-mainDay-input") Dự kiến (1d, 2d, 3d ...)
+							input.form-control#addtask-mainDay-input(type="text" name="mainDay")
+				.addtask-input-item.col-lg-6
+					.card
+						.input-group.input-custom-style-01
+							label.mb-0(for="addtask-material-input") Chất liệu
+							input.form-control#addtask-material-input(type="text" name="material")
+				.addtask-input-item.col-lg-6
+					.card
+						.input-group.input-custom-style-01
+							label.mb-0(for="addtask-projectName-input") Tên dự án
+							input.form-control#addtask-projectName-input(type="text" name="projectName")
+				.addtask-input-item.col-12
+					.card
+						textarea#mytextarea Hello, World!
+				
+
+			
+

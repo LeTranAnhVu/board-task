@@ -1,0 +1,87 @@
+
+$done : #badc58
+$processing : #ff7f50
+$mission : #1e90ff
+$red : #ff7f50
+$theme-color : $mission
+
+// addtask
+
+.section-addtask
+	.addtask-container
+		margin-top: 100px
+		.addtask-input-container
+
+		.addtask-preview-container
+
+
+// end addtask
+
+
+// addtask-input-box
+.addtask-input-box
+	border: 1px $theme-color solid
+	.box-title
+		width: 100%
+		background: $theme-color
+		color: white
+		padding: 15px 40px
+
+	// common
+	select
+		/* for Firefox */
+		-moz-appearance: none
+		/* for Chrome */
+		-webkit-appearance: none
+	select
+		&::-ms-expand
+			display: none
+	
+	input
+		&[type='date']
+			&::-webkit-datetime-edit-text,
+			&::-webkit-datetime-edit-month-field,
+			&::-webkit-datetime-edit-day-field,
+			&::-webkit-datetime-edit-year-field
+				-webkit-appearance: none
+				// display: none
+	// end common
+	.box-content
+		padding: 10px
+		.addtask-input-item
+			margin-bottom: 30px
+			&:first-child
+				margin-top: 10px
+// end addtask-input-box
+
+// input-custom-style-01
+
+.input-custom-style-01
+	position: relative
+	height: 50px
+	label
+		position: absolute
+		z-index: 500
+		top: 50%
+		left: 10px
+		transform: translateY(-50%)
+		// height: 100%
+		transition: all .5s ease-in-out
+		font-size: 1rem
+	input
+
+		width: 100%
+		height: 100%
+	&:hover
+		label
+			font-size: .8rem
+			font-style: italic
+			opacity: .8
+			transform: translateY(-120%)
+		input
+			// padding-bottom: 5px
+			padding-top: 2rem
+			font-size: 1.2rem
+			font-weight: bold
+
+// end input-custom-style-01

@@ -1,0 +1,133 @@
+
+$done : #badc58
+$processing : #ff7f50
+$mission : #1e90ff
+$red : #ff7f50
+$theme-color : $red
+
+
+// ===================task box 
+.tasks-box
+	border: 1px $theme-color solid
+	border-radius: 3px
+	overflow: hidden
+	box-shadow: 0 0 2px 0 black
+
+	.task-title
+		background: $theme-color
+		color: white
+		padding: 10px
+		text-transform: capitalize
+		text-align: left
+		margin: 0
+	.tasks
+		width: 100%
+		padding: 10px
+// end ===================task box 
+
+// ===================task
+.task
+	border: 1px $theme-color solid
+	border-radius: 3px
+	
+	position: relative
+	display: flex
+	i
+		color: $theme-color
+	.row
+		padding: 0
+		margin: 0
+		[class*="col-"]
+			padding: 0
+	&:hover
+		&:before
+			content: ""
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			height: 100%
+			width: 5px
+			background: $theme-color
+	.task-box
+		flex-grow: 1
+		padding: 10px
+
+		
+		.main-content
+			width: 100%
+			.row
+				flex-wrap: nowrap
+				.item
+					width: 100%
+					display: flex
+					justify-content: center
+					align-items: center
+					&.priority-col
+						padding-right: 5px
+						min-width: 50px
+						.priority
+							background: lighten($theme-color,30%)
+							display: inline-flex
+							width: 45px
+							height: 45px
+							border-radius: 50%
+							justify-content: center
+							align-items: center
+							color: $theme-color
+							font-size: 2rem
+					.inner-main-content
+						width: 80%
+						padding-right: 10px
+						.title
+							.task-code
+								font-weight: bold
+								color: $theme-color
+								padding-right: 10px
+							.task-name
+								color: $theme-color
+						.desc
+							.priority
+								color: $theme-color
+					.extra-features
+						// flex-grow: 1
+						width: 30%
+						display: flex
+						flex-flow: column nowrap
+						align-items: flex-end
+						.file-link
+							color: $theme-color
+							text-align: right
+							font-size: .8rem
+							font-style: italic
+							margin-bottom: 10px
+						.task-toggle-btn
+							background: $theme-color
+							border-color: lighten($theme-color,10%)
+							i
+								color: white
+		.collapse-content
+			padding-top: 5px
+			.card
+				padding: 5px 10px
+				border: 0
+				border-radius: 0
+				border-top: 1px black solid
+	.task-move-box
+		width: 20px
+		position: relative
+		padding-left: 2px
+		.task-move-btn
+			position: absolute
+			top: 0
+			right: 0
+			width: 100%
+			height: 100%
+			display: flex
+			background: $theme-color
+			justify-content: center
+			align-items: center
+			border-radius: 0
+
+
+// end ===================task

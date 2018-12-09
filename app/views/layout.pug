@@ -1,16 +1,27 @@
 doctype html
 html(lang='en')
-  head
-    meta(charset='UTF-8')
-    meta(name='viewport', content='width=device-width')
-    title= title
-    link(rel='apple-touch-icon', href='/favicon/apple-touch-icon.png')
-    link(rel='icon', sizes='32x32', type='image/png', href='/favicon/favicon.png')
-    include ./include/_css
-    link(rel='stylesheet', href='/css/style.css')
-    block css
-  body
-    block content
+	head
+		meta(charset='UTF-8')
+		meta(name='viewport', content='width=device-width')
+		title= title
+		link(rel='apple-touch-icon', href='/favicon/apple-touch-icon.png')
+		link(rel='icon', sizes='32x32', type='image/png', href='/favicon/favicon.png')
+		include ./include/_css
+		link(rel='stylesheet', href='/css/style.css')
+		block css
+	body
+		include header
+		main 
+			.container-fluid
+				.main-layout
+					//- side-menu
+					.menu-layout
+						include menu
+					//- end side-menu
+					//- main content
+					.content-layout.container-fluid
+						block content
+					//- end main content
 
-    include ./include/_script
-    block js
+		include ./include/_script
+		block js
