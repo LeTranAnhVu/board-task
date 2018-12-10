@@ -6386,9 +6386,10 @@ html, body {
     margin: 0; }
   .tasks-box .tasks {
     width: 100%;
-    padding: 10px; }
+    border: black 1px solid; }
 
 .task {
+  margin: 10px;
   border: 1px #ff7f50 solid;
   border-radius: 3px;
   position: relative;

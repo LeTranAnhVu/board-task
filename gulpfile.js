@@ -47,8 +47,8 @@ gulp.task('copy-img', () => {
 
 
 gulp.task('sass', () => {
-  return gulp.src(['./public/sass/*.sass',
-      '!./public/sass/{**/\_*,**/\_*/**}'
+  return gulp.src(['./app/sass/*.sass',
+      '!./app/sass/{**/\_*,**/\_*/**}'
     ])
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', function (err) {
@@ -85,7 +85,7 @@ gulp.task('concat-js', () => {
 
 
 gulp.task('watch', () => {
-  gulp.watch('./public/sass/*.sass', ['sass']);
+  gulp.watch('./app/sass/**/**.sass', ['sass']);
   gulp.watch('./app/img/**/*.*', ['copy-img']);
   gulp.watch('./app/img', ['copy-img']);
   gulp.watch('./app/scripts/**/*.js', ['copy-js']);

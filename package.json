@@ -9,7 +9,9 @@
     "dev": "gulp",
     "test": "mocha -R spec ./test/*.js",
     "lint": "eslint ./ || exit 0",
-    "lint-fix": "eslint ./ --fix || exit 0"
+    "lint-fix": "eslint ./ --fix || exit 0",
+    "unbuild": "rmdir /S /Q /AH node_modules || rmdir /S /Q /AH bower_components",
+    "build": "npm i && bower update"
   },
   "author": "FullStack VietNam",
   "license": "ISC",
