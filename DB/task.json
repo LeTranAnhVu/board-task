@@ -11,7 +11,8 @@
       "mainDay" : 4,
       "material" : "sắt",
       "projectName" : "Dựng phôi thép",
-      "note" : "lorem  rem remrem"
+      "note" : "lorem  rem remrem",
+      "state" : "waiting"
     },
     {
       "id": 2,
@@ -24,7 +25,22 @@
       "mainDay" : 6,
       "material" : "gang",
       "projectName" : "Dựng phôi gang",
-      "note" : "lorem  rem cadfadsfa"
+      "note" : "lorem  rem cadfadsfa",
+      "state" : "doing"
+    },
+    {
+      "id": 3,
+      "missionName" : "nhiem vu 3",
+      "priority" : "L",
+      "document" : "",
+      "author" : "Khoai To 2",
+      "assignee" : "Vu Le",
+      "createdDate" : "20/11/2019",
+      "mainDay" : 6,
+      "material" : "gang",
+      "projectName" : "Dựng phôi gang",
+      "note" : "lorem  rem cadfadsfa",
+      "state" : "done"
     }
   ]
 }
