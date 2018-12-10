@@ -12,7 +12,7 @@
       "material" : "sắt",
       "projectName" : "Dựng phôi thép",
       "note" : "lorem  rem remrem",
-      "state" : "waiting"
+      "group" : "tasks-mission"
     },
     {
       "id": 2,
@@ -26,7 +26,7 @@
       "material" : "gang",
       "projectName" : "Dựng phôi gang",
       "note" : "lorem  rem cadfadsfa",
-      "state" : "doing"
+      "group" : "tasks-processing"
     },
     {
       "id": 3,
@@ -40,7 +40,7 @@
       "material" : "gang",
       "projectName" : "Dựng phôi gang",
       "note" : "lorem  rem cadfadsfa",
-      "state" : "done"
+      "group" : "tasks-done"
     }
   ]
 }
