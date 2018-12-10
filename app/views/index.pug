@@ -6,12 +6,24 @@ block content
 		.row
 			.col-lg-4.tasks-col
 				#tasks-mission
-					include ./components/taskbox
+					.tasks-box
+						h3.task-title Nhiệm Vụ
+						.tasks
+							- for(var i = 0; i < 4; i++)
+								include ./components/task
 
 			.col-lg-4.tasks-col
 				#tasks-processing
-					include ./components/taskbox
+					.tasks-box
+						h3.task-title Đang Thực Hiện
+						.tasks
+							- for(var i = 0; i < 4; i++)
+								include ./components/task
 
 			.col-lg-4.tasks-col
 				#tasks-done
-					include ./components/taskbox
+					.tasks-box
+						h3.task-title Đã Hoàn Thành
+						.tasks
+							- for(var i = 0; i < 4; i++)
+								include ./components/task

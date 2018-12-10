@@ -3,27 +3,75 @@ $done : #badc58
 $processing : #ff7f50
 $mission : #1e90ff
 $red : #ff7f50
-$theme-color : $red
+$blue : #1e90ff
+$gray : #95a5a6
+$theme-color: $done
+
+$high-priority-color : $red
+$normal-priority-color : $blue
+$low-priority-color : $gray
+
+
 
 
 // ===================task box
 .tasks-box
-	border: 1px $theme-color solid
+
 	border-radius: 3px
 	overflow: hidden
 	box-shadow: 0 0 2px 0 black
 
 	.task-title
-		background: $theme-color
-		color: white
 		padding: 10px
 		text-transform: capitalize
 		text-align: left
 		margin: 0
 	.tasks
 		width: 100%
-		border: black 1px solid
+
+
+
+
+
+
 // end ===================task box
+
+// mission
+#tasks-mission
+	.tasks-box
+		border: 1px $mission solid
+		.task-title
+			background: $mission
+			color: white
+		.tasks
+// end mission
+
+
+// processing
+#tasks-processing
+	.tasks-box
+		border: 1px $processing solid
+		.task-title
+			background: $processing
+			color: white
+		.tasks
+// end processing
+
+
+
+// done
+#tasks-done
+	.tasks-box
+		border: 1px $done solid
+		.task-title
+			background: $done
+			color: white
+		.tasks
+// end done
+
+
+
+
 
 // ===================task
 .task
@@ -131,4 +179,146 @@ $theme-color : $red
 			border-radius: 0
 
 
+
+
 // end ===================task
+
+
+
+
+// task-theme
+
+
+
+// high-priority
+.high-priority
+	border: 1px $high-priority-color solid
+	i
+		color: $high-priority-color
+	&:hover
+		&:before
+			background: $high-priority-color
+	.task-box
+		.main-content
+			.row
+				.item
+					&.priority-col
+						.priority
+							background: lighten($high-priority-color,30%)
+							color: $high-priority-color
+					.inner-main-content
+						.title
+							.task-code
+								color: $high-priority-color
+							.task-name
+								color: $high-priority-color
+						.desc
+							.priority
+								color: $high-priority-color
+					.extra-features
+						.file-link
+							color: $high-priority-color
+						.task-toggle-btn
+							background: $high-priority-color
+							border-color: lighten($high-priority-color,10%)
+							i
+								color: white
+		.collapse-content
+			.card
+				border-top: 1px black solid
+	.task-move-box
+		.task-move-btn
+			background: $high-priority-color
+
+// end high-priority
+
+
+
+// normal-priority
+.normal-priority
+	border: 1px $normal-priority-color solid
+	i
+		color: $normal-priority-color
+	&:hover
+		&:before
+			background: $normal-priority-color
+	.task-box
+		.main-content
+			.row
+				.item
+					&.priority-col
+						.priority
+							background: lighten($normal-priority-color,30%)
+							color: $normal-priority-color
+					.inner-main-content
+						.title
+							.task-code
+								color: $normal-priority-color
+							.task-name
+								color: $normal-priority-color
+						.desc
+							.priority
+								color: $normal-priority-color
+					.extra-features
+						.file-link
+							color: $normal-priority-color
+						.task-toggle-btn
+							background: $normal-priority-color
+							border-color: lighten($normal-priority-color,10%)
+							i
+								color: white
+		.collapse-content
+			.card
+				border-top: 1px black solid
+	.task-move-box
+		.task-move-btn
+			background: $normal-priority-color
+
+// end normal-priority
+
+
+
+
+// low-priority
+.low-priority
+	border: 1px $low-priority-color solid
+	i
+		color: $low-priority-color
+	&:hover
+		&:before
+			background: $low-priority-color
+	.task-box
+		.main-content
+			.row
+				.item
+					&.priority-col
+						.priority
+							background: lighten($low-priority-color,30%)
+							color: $low-priority-color
+					.inner-main-content
+						.title
+							.task-code
+								color: $low-priority-color
+							.task-name
+								color: $low-priority-color
+						.desc
+							.priority
+								color: $low-priority-color
+					.extra-features
+						.file-link
+							color: $low-priority-color
+						.task-toggle-btn
+							background: $low-priority-color
+							border-color: lighten($low-priority-color,10%)
+							i
+								color: white
+		.collapse-content
+			.card
+				border-top: 1px black solid
+	.task-move-box
+		.task-move-btn
+			background: $low-priority-color
+
+// end low-priority
+
+// end task-theme
