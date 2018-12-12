@@ -7,7 +7,7 @@ router.get('/', (req, res, next) => {
   const name = Utils.randomString(5);
   console.log(name);
 
-  res.render('index', { title: 'Khoai To' });
+  res.render('index', { title: 'Cu To vãi Lol' });
 });
 
 module.exports = router;
