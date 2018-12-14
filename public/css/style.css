@@ -6386,21 +6386,45 @@ html, body {
 
 #tasks-mission .tasks-box {
   border: 1px #1e90ff solid; }
-  #tasks-mission .tasks-box .task-title {
+  #tasks-mission .tasks-box .title-box {
     background: #1e90ff;
-    color: white; }
+    color: white;
+    display: flex;
+    justify-content: space-between; }
+    #tasks-mission .tasks-box .title-box .sort-box {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      #tasks-mission .tasks-box .title-box .sort-box .sort {
+        margin: 0px 10px; }
 
 #tasks-processing .tasks-box {
   border: 1px #ff7f50 solid; }
-  #tasks-processing .tasks-box .task-title {
+  #tasks-processing .tasks-box .title-box {
     background: #ff7f50;
-    color: white; }
+    color: white;
+    display: flex;
+    justify-content: space-between; }
+    #tasks-processing .tasks-box .title-box .sort-box {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      #tasks-processing .tasks-box .title-box .sort-box .sort {
+        margin: 0px 10px; }
 
 #tasks-done .tasks-box {
   border: 1px #badc58 solid; }
-  #tasks-done .tasks-box .task-title {
+  #tasks-done .tasks-box .title-box {
     background: #badc58;
-    color: white; }
+    color: white;
+    display: flex;
+    justify-content: space-between; }
+    #tasks-done .tasks-box .title-box .sort-box {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      #tasks-done .tasks-box .title-box .sort-box .sort {
+        margin: 0px 10px; }
 
 .task {
   margin: 10px;

@@ -7,20 +7,62 @@ block content
 			.col-lg-4.tasks-col
 				#tasks-mission
 					.tasks-box
-						h3.task-title Nhiệm Vụ
+						.title-box
+							h3.task-title Nhiệm Vụ
+							.sort-box
+								.sort.btn#sortByNewest
+									i.fa.fa-calendar-alt
+									i.fa.fa-sort.ml-1
+								.sort.btn#sortByStatus
+									i.fa.fa-thermometer-three-quarters
+									i.fa.fa-sort.ml-1
+								.sort.btn#sortByDeadline
+									i.fa.fa-clock
+									i.fa.fa-sort.ml-1
 						.tasks
+							- for (let i in tasks)
+								include ./components/task
+
 
 
 			.col-lg-4.tasks-col
 				#tasks-processing
 					.tasks-box
-						h3.task-title Đang Thực Hiện
+						.title-box
+							h3.task-title Đang Thực Hiện
+							.sort-box
+								.sort.btn#sortByNewest
+									i.fa.fa-calendar-alt
+									i.fa.fa-sort.ml-1
+								.sort.btn#sortByStatus
+									i.fa.fa-thermometer-three-quarters
+									i.fa.fa-sort.ml-1
+								.sort.btn#sortByDeadline
+									i.fa.fa-clock
+									i.fa.fa-sort.ml-1
 						.tasks
+							- for (let i in tasks)
+								include ./components/task
+
 
 
 			.col-lg-4.tasks-col
 				#tasks-done
 					.tasks-box
-						h3.task-title Đã Hoàn Thành
+						.title-box
+							h3.task-title Đã Hoàn Thành
+							.sort-box
+								.sort.btn#sortByNewest
+									i.fa.fa-calendar-alt
+									i.fa.fa-sort.ml-1
+								.sort.btn#sortByStatus
+									i.fa.fa-thermometer-three-quarters
+									i.fa.fa-sort.ml-1
+								.sort.btn#sortByDeadline
+									i.fa.fa-clock
+									i.fa.fa-sort.ml-1
 						.tasks
+							- for (let i in tasks)
+								include ./components/task
+
 

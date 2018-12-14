@@ -12,23 +12,27 @@ const missionOpt = {
 
   // Element is chosen
   onChoose: function (/**Event*/evt) {
-    evt.oldIndex;  // element index within parent
+	evt.oldIndex;  // element index within parent
+	// console.log(evt.item);
   },
 
   // Element dragging started
   onStart: function (/**Event*/evt) {
-    // console.log(evt.oldIndex );  // element index within parent
+	// console.log(evt.oldIndex );  // element index within paren	t
+	// console.log('hulala');
     // console.log(evt.item);
-    // console.log(typeof evt.item);
+	// console.log(typeof evt.item);
   },
 
   // Element dragging ended
   onEnd: function (/**Event*/evt) {
     var itemEl = evt.item;  // dragged HTMLElement
-    evt.to;    // target list
-    evt.from;  // previous list
-    evt.oldIndex;  // element's old index within old parent
-    evt.newIndex;  // element's new index within new parent
+    // console.log("=======mission option=========");    // target list
+    // console.log(evt.to);    // target list
+    // console.log(evt.from);  // previous list
+    // console.log(evt.oldIndex);  // element's old index within old parent
+    // console.log(evt.newIndex);  // element's new index within new parent
+    // console.log("================");    // target list
   },
 
   // Element is dropped into the list from another list
@@ -102,25 +106,31 @@ const processingOpt = {
   // Element dragging ended
   onEnd: function (/**Event*/evt) {
     var itemEl = evt.item;  // dragged HTMLElement
-    evt.to;    // target list
-    evt.from;  // previous list
-    evt.oldIndex;  // element's old index within old parent
-    evt.newIndex;  // element's new index within new parent
-  },
+	// console.log("=======processing option=========");    // target list
+    // console.log(evt.to);    // target list
+    // console.log(evt.from);  // previous list
+    // console.log(evt.oldIndex);  // element's old index within old parent
+    // console.log(evt.newIndex);  // element's new index within new parent
+    // console.log("================");    // target list
+},
 
-  // Element is dropped into the list from another list
-  onAdd: function (/**Event*/evt) {
-    // same properties as onEnd
+// Element is dropped into the list from another list
+onAdd: function (/**Event*/evt) {
+	// same properties as onEnd
+	console.log("=======processing onAdd=========");    // target list
+	console.log(evt.item);  
   },
 
   // Changed sorting within list
   onUpdate: function (/**Event*/evt) {
-    // same properties as onEnd
+	// same properties as onEnd
+	console.log('update');
   },
 
   // Called by any change to the list (add / update / remove)
   onSort: function (/**Event*/evt) {
-    // same properties as onEnd
+	// same properties as onEnd
+	console.log("onsort",evt.item)
   },
 
   // Element is removed from the list into another list

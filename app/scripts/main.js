@@ -1,5 +1,8 @@
 
 $(document).ready(() => {
-  app.init();
+  APP.init();
+//   $('#dend').append(JSON.stringify(tasksDB));
 });
+
+
 
