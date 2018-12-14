@@ -118,7 +118,7 @@ const processingOpt = {
 onAdd: function (/**Event*/evt) {
 	// same properties as onEnd
 	console.log("=======processing onAdd=========");    // target list
-	console.log(evt.item);  
+	console.log(evt.item);
   },
 
   // Changed sorting within list
