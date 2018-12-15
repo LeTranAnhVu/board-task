@@ -84,15 +84,13 @@ let APP = {
 		APP.sortByPriority();
 	},
 
-	init: function () {
+	init: function (Task) {
 		// init sortable
 		APP.tableId.forEach(htmlId => {
 			APP.sortObject[htmlId] = APP.initSortable(htmlId, tableConfig[htmlId]);
 		});
-		// end init sortable
-		// console.log(APP.sortObject);
-		APP.sortData();
-		// APP.render();
+		APP.sortData(Task);
+		APP.render();
 	}
 };
 

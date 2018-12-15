@@ -25,7 +25,6 @@ let APP = {
 
 	sortObject : {},
 
-
 	tableId: ['tasks-mission', 'tasks-processing', 'tasks-done'],
 
 	initSortable: function (id, opt) {
@@ -46,7 +45,7 @@ let APP = {
 		tasksDB.forEach(data => {
 			let newTask = new Task(data);
 			APP.tables[newTask.group][newTask.priority].push(newTask.process());
-		})
+		});
 	},
 
 	sortByPriority: function () {
@@ -63,7 +62,7 @@ let APP = {
 				parentId = "#" + id;
 				APP.renderElement(parentId, newNode);
 			})
-		})
+		});
 	},
 
 	sortData: function () {
@@ -79,14 +78,12 @@ let APP = {
 		APP.sortByPriority();
 	},
 
-	init: function () {
+	init: function (Task) {
 		// init sortable
 		APP.tableId.forEach(htmlId => {
 			APP.sortObject[htmlId] = APP.initSortable(htmlId, tableConfig[htmlId]);
 		})
-		// end init sortable
-		// console.log(APP.sortObject);
-		APP.sortData();
-		// APP.render();
+		APP.sortData(Task);
+		APP.render();
 	}
 }

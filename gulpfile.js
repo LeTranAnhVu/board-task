@@ -10,10 +10,11 @@ const {
 } = browserSync;
 const config = require('./config/config');
 
-
+const html2js = require('gulp-html-to-js');
 const clean = require('gulp-clean');
 const babel = require('gulp-babel');
-var runSequence = require('run-sequence');
+const runSequence = require('run-sequence');
+const pug = require('gulp-pug');
 
 gulp.task('clean', () => {
 	return gulp.src([
@@ -25,6 +26,19 @@ gulp.task('clean', () => {
 		})
 		.pipe(clean());
 });
+
+
+gulp.task('pug-2-js',() => {
+	return gulp.src('./app/views/components/task.pug')
+	.pipe(pug({
+		pretty: true
+	}))
+	// .pipe(html2js())
+	.pipe(gulp.dest('./public/template'))
+});
+
+
+
 
 gulp.task('copy-js', () => {
 	return gulp.src([
@@ -91,6 +105,7 @@ gulp.task('watch', () => {
 	gulp.watch('./app/scripts/**/*.js', ['copy-js']);
 	gulp.watch('./app/views/**/**.pug', ['nodemon']).on('change', browserSync.reload);
 	gulp.watch("./public/**/*.*").on('change', browserSync.reload);
+	gulp.watch("./app/views/components/**/*.*",['pug-2-js']);
 });
 
 gulp.task('browser-sync', ['nodemon'], () => {
@@ -128,6 +143,7 @@ gulp.task('default', function (callback) {
 		'concat-js',
 		'concat-css',
 		'sass',
+		'pug-2-js',
 		'nodemon',
 		'watch',
 		'browser-sync',

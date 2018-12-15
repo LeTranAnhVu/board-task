@@ -1,0 +1,18 @@
+extends layout
+
+block content
+
+	section.login-page
+		.form-box
+			form(action="/check" method="POST")
+				.form-group
+					label(for="exampleInputEmail1") User name
+					input#exampleInputEmail1.form-control(type="text" aria-describedby="emailHelp" placeholder="Enter email" name="username")
+					small#emailHelp.form-text.text-muted We'll never share your information with anyone else.
+				.form-group
+					label(for="exampleInputPassword1") Password
+					input#exampleInputPassword1.form-control(type="password" placeholder="Password" name="password")
+				.form-check
+					input#exampleCheck1.form-check-input(type="checkbox")
+					label.form-check-label(for="exampleCheck1") Save
+				button.btn.btn-primary.mt-2(type="submit") Submit
